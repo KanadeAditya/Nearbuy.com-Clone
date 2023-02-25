@@ -12,21 +12,16 @@ businessrouter.use(express.json());
 
 businessrouter.get("/",async (req,res)=>{
     try {
+        let allbusiness = await BusinessModel.find();
+        res.send(allbusiness);
+        // let query = req.query ;
+        // if(query){
+            
 
-        let query = req.query ;
-        if(query){
-            let allbusiness = await BusinessModel.find();
-            console.log(allbusiness)
-            if(query.type){
-                allbusiness = await BusinessModel.find(...allbusiness).find({type:query.type})
-            }
-
-
-            res.send(allbusiness);
-        }else{
-            let allbusiness = await BusinessModel.find();
-            res.send(allbusiness);
-        }
+        // }else{
+           
+           
+        // }
     } catch (error) {
         res.send({"msg":error.message});
     }

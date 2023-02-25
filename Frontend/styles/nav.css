@@ -1,19 +1,32 @@
 *{
     margin: 0;
     padding: 0;
+    position: relative;
+}
+
+#body{
+  padding-top: 130px;
+  position: relative;
 }
 
 nav {
-   width: 90%;
+   width: 100%;
   position: fixed;
-  left: 5%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  top: 0px  ;
+  z-index: 1;
+  padding-bottom: 15px;
+  background-color: wheat;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
   padding-left: 5px;
+  padding-top: 10px;
+  padding-top: 20px;
   background-color: #f1f1f1;
+
 }
 
 .nav-links li {
@@ -35,7 +48,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-top: 2px;
+ padding-top: 15px;
   background-color: wheat;
 }
 
@@ -70,5 +83,71 @@ nav {
 }
 
 .search button:hover{
-    
+  color: #e24c15
 }
+
+footer {
+  border: 2px solid black;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.footer-container {
+  display: grid;
+  background-color: #666666;
+  grid-template-columns: repeat(2,1fr);
+ grid-template-rows: repeat(2,1fr);
+  row-gap: 20px;
+  column-gap: 20px;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+}
+
+
+
+.footer-section:first-child{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-align: center;
+}
+
+
+.footer-section {
+  text-align: justify ;
+  /* background-color: black; */
+  padding: 20px;
+}
+
+
+.footer-container>h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-container li {
+  margin-bottom: 10px;
+}
+
+.footer-container a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-container a:hover {
+  text-decoration: underline;
+}
+
+.footer-container li:hover {
+  text-decoration: underline;
+}
+
+.footer-container li:first-child {
+  margin-top: 15px;
+}
+

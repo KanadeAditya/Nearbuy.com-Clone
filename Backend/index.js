@@ -9,6 +9,7 @@ const {businessrouter} = require("./controller/business.route.js")
 const app = express();
 app.use(cors());
 app.use(express.json());
+
 app.use("/users",userrouter);
 app.use("/business",businessrouter);
 

@@ -6,76 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./styles/nav.css">
-    <link rel="stylesheet" href="./styles/myservices.css">
-    <title>My Services</title>
+    <link rel="stylesheet" href="./styles/addservice.css">
+    <title>Admin Post Services</title>
 </head>
 <body>
     <nav>
         <ul class="nav-links">
-          <li><a href="./login.html">Login/Signup |</a></li>
-          <li><a href="./index.html">Home  |</a></li>
-          <li><a href="./myservices.html">My Services  |</a></li>
-          <li><a href="./business.html">List of Businesses </a></li>
+          <li><a href="./addservice.html">Add New Services |</a></li>
+          <li><a href="./admin.html">Home  |</a></li>
+          <li><a href="./adminsignup.html">Add New Admin  |</a></li>
+          <li><a href="./adminlogin.html">Logout Admin </a></li>
         </ul>
         <div class="bottom-strap">
           <div class="logo">
             <img src="./img/nearbuy_red_with_subtitle.svg" alt="Logo">
           </div>
-          <div class="search">
+          <!-- <div class="search">
             <input type="text" placeholder="Search Restaurants, Spa , Events">
             <button type="submit">Search</button>
-          </div>
+          </div> -->
         </div>
     </nav>
     <div id="body">
-        <h1 id="summary">Checkout Summary</h1>
-	<div id="container">
-
-		<div class="services">
-
-			<h2 class="titles">Services :-</h2>
-
-			<table>
-				<thead>
-					<tr>
-						<th>Business Name</th>
-						<th>Type</th>
-						<th>Price</th>
-                        <th>Location</th>
-                        <th>Remove Option</th>
-					</tr>
-				</thead>
-				<tbody id="appendhere">
-                    
-                </tbody>
-			</table>
-
-		</div>
-
-		<div class="order-summary">
-
-			<h2 class="titles">Order Summary :-</h2>
-
-			<table>
-				<tr>
-					<td>Subtotal</td>
-					<td id="subtotal"></td>
-				</tr>
-				<tr>
-					<td>GST (18%)</td>
-					<td id="taxable"></td>
-				</tr>
-				<tr>
-					<td>Total</td>
-					<td id="total-amt"></td>
-				</tr>
-			</table>
-
-			<button id="checkout-button">Checkout</button>
-
-		</div>
-
-	</div>
+        <form id="add-business-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+          
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+            <br>
+          
+            <label for="type">Type:</label>
+            <input type="text" id="type" name="type" required>
+            <br>
+          
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" required>
+            <br>
+          
+            <button type="submit">Add Business</button>
+          </form>
+          
     </div>
     <footer>
       <div class="footer-container">
@@ -103,5 +75,5 @@
     </footer>
       
 </body>
-<script src="./scripts/myservices.js"></script>
+<script src="./scripts/addservice.js"></script>
 </html>

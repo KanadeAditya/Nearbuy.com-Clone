@@ -21,8 +21,10 @@ userrouter.post("/register",async (req,res)=>{
         let email = req.body.email;
         let password = req.body.password;
         let ifexists = await UserModel.find({email:email});
-
-        if(ifexists.length){
+        
+        if(!req.body.name){
+            res.send({"msg":"Please provide the information about name"})
+        }else if(ifexists.length){
             res.send({"msg":"User already exist, please login"});
         }else{
             bcrypt.hash(password, 5, (err, hash)=>{

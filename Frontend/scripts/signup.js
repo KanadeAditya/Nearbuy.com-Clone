@@ -3,6 +3,7 @@ const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 const confirmPasswordInput = document.getElementById('confirm-password');
+const url = "http://localhost:4040/"; // Here is the URL you can change with the ndeployed link afterwards 
 
 form.addEventListener('submit', (e) => {
 
@@ -42,7 +43,25 @@ form.addEventListener('submit', (e) => {
     obj.name = form.name.value;
     obj.email = form.email.value;
     obj.password = form.password.value;
-    console.log(obj)
+    fetch(`${url}users/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(obj)
+      })
+      .then(response => {
+          return response.json();
+      })
+      .then(data => {
+        alert(data.msg);
+        if(data.msg === "User registered successfully"){
+            window.location.href = "/Frontend/login.html"
+        }
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 
 

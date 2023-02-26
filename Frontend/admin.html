@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles/nav.css">
+    <link rel="stylesheet" href="./styles/admin.css">
+    <title>Admin Home Page</title>
+</head>
+<body>
+    <nav>
+        <ul class="nav-links">
+          <li><a href="./addservice.html">Add New Services |</a></li>
+          <li><a href="./admin.html">Home  |</a></li>
+          <li><a href="./adminsignup.html">Add New Admin  |</a></li>
+          <li><a href="./adminlogin.html">Logout Admin </a></li>
+        </ul>
+        <div class="bottom-strap">
+          <div class="logo">
+            <img src="./img/nearbuy_red_with_subtitle.svg" alt="Logo">
+          </div>
+          <!-- <div class="search">
+            <input type="text" placeholder="Search Restaurants, Spa , Events">
+            <button type="submit">Search</button>
+          </div> -->
+        </div>
+    </nav>
+    <div id="body">
+      <div id="sort-section">
+        <div id="filter">
+          <label for="location-filter">Filter by Location:</label>
+          <select id="location-filter">
+            <option value="">All Locations</option>
+            <option value="south">South</option>
+            <option value="east">East</option>
+            <option value="west">West</option>
+            <option value="north">North</option>
+          </select>
+        </div>
+        <div id="sort">
+          <label for="price-sort">Sort by Price:</label>
+          <select id="price-sort">
+            <option value="">Sort By Price</option>
+            <option value="asc">Price: Low to High</option>
+            <option value="desc">Price: High to Low</option>
+          </select>
+        </div>
+
+      </div>
+      <div id="render-business">
+          
+      </div>
+    </div>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Amazing offers available on nearbuy</h3>
+          <p>nearbuy helps you discover the best things to do, eat and buy – wherever you are! Make every day awesome with nearbuy. Dine at the finest restaurants, relax at the best spas, pamper yourself with exciting wellness and shopping offers or just explore your city intimately… you will always find a lot more to do with nearbuy. From tattoo parlors to music concerts, movie tickets to theme parks, everything you want is now within reach. Don't stop yet! Take it wherever you go with the nearbuy mobile app. Based on your location and preference, our smart search engine will suggest new things to explore every time you open the app. What's more, with offers on everything around you... you are sure to try something new every time.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Company</h3>
+          <ul>
+            <li>About US</li>
+            <li>Blog</li>
+            <li>Policy</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+      
+</body>
+<script src="./scripts/admin.js"></script>
+</html>

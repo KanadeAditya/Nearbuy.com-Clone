@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/nav.css">
+    <link rel="stylesheet" href="./styles/business.css">
     <title>List of Businesses</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
         <ul class="nav-links">
           <li><a href="./login.html">Login/Signup |</a></li>
           <li><a href="./index.html">Home  |</a></li>
-          <li><a href="#">About  |</a></li>
+          <li><a href="./myservices.html">My Services  |</a></li>
           <li><a href="./business.html">List of Businesses </a></li>
         </ul>
         <div class="bottom-strap">
@@ -27,10 +28,28 @@
     </nav>
     <div id="body">
         <div id="sort-section">
+          <div id="filter">
+            <label for="location-filter">Filter by Location:</label>
+            <select id="location-filter">
+              <option value="">All Locations</option>
+              <option value="south">South</option>
+              <option value="east">East</option>
+              <option value="west">West</option>
+              <option value="north">North</option>
+            </select>
+          </div>
+          <div id="sort">
+            <label for="price-sort">Sort by Price:</label>
+            <select id="price-sort">
+              <option value="">Sort By Price</option>
+              <option value="asc">Price: Low to High</option>
+              <option value="desc">Price: High to Low</option>
+            </select>
+          </div>
 
         </div>
         <div id="render-business">
-
+            
         </div>
     </div>
 <footer>
@@ -58,4 +77,5 @@
       </div>
     </footer>
 </body>
+<script src="./scripts/business.js"></script>
 </html>

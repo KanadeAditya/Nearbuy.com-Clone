@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./styles/nav.css">
-    <link rel="stylesheet" href="./styles/login.css">
-    <title>Log IN page</title>
+    <link rel="stylesheet" href="./styles/myservices.css">
+    <title>Home Page</title>
 </head>
 <body>
     <nav>
@@ -27,19 +28,56 @@
         </div>
     </nav>
     <div id="body">
-        <form id="login-form">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            
-            <input type="submit" value="Login">
-            <a href="./signup.html" class="signup-btn">Sign up</a>
-        </form>
-        <div id="logout"><button id="btn-logout">Log Out</button></div>
+        <h1 id="summary">Checkout Summary</h1>
+	<div id="container">
+
+		<div class="services">
+
+			<h2 class="titles">Services :-</h2>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Business Name</th>
+						<th>Type</th>
+						<th>Price</th>
+                        <th>Location</th>
+                        <th>Remove Option</th>
+					</tr>
+				</thead>
+				<tbody id="appendhere">
+                    
+                </tbody>
+			</table>
+
+		</div>
+
+		<div class="order-summary">
+
+			<h2 class="titles">Order Summary :-</h2>
+
+			<table>
+				<tr>
+					<td>Subtotal</td>
+					<td id="subtotal"></td>
+				</tr>
+				<tr>
+					<td>GST (18%)</td>
+					<td id="taxable"></td>
+				</tr>
+				<tr>
+					<td>Total</td>
+					<td id="total-amt"></td>
+				</tr>
+			</table>
+
+			<button id="checkout-button">Checkout</button>
+
+		</div>
+
+	</div>
     </div>
-<footer>
+    <footer>
       <div class="footer-container">
         <div class="footer-section">
           <h3>Amazing offers available on nearbuy</h3>
@@ -63,6 +101,7 @@
         </div>
       </div>
     </footer>
+      
 </body>
-<script src="./scripts/login.js"></script>
+<script src="./scripts/myservices.js"></script>
 </html>

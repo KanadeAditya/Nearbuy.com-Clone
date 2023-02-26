@@ -5,25 +5,35 @@ const jwt = require("jsonwebtoken");
 const {BusinessModel} = require("../model/business.model.js");
 const {authenticatorUser} = require("../middleware/authenticate.js");
 const { UserModel } = require("../model/users.model.js");
-
+const cors = require("cors") 
 const businessrouter = express.Router();
 businessrouter.use(express.json());
-
+businessrouter.use(cors())
 
 businessrouter.get("/",async (req,res)=>{
     try {
         let allbusiness = await BusinessModel.find();
         res.send(allbusiness);
-        // let query = req.query ;
-        // if(query){
-            
-
-        // }else{
-           
-           
-        // }
     } catch (error) {
         res.send({"msg":error.message});
+    }
+})
+
+businessrouter.get("/filtered",async(req,res)=>{
+    let loc = req.query.location;
+    let sort = req.query.sort ; 
+    // res.send({loc,sort})
+    if(loc && sort){
+        let business = await BusinessModel.find({location:{$regex:loc,$options:"i"}}).sort({price:sort});
+        res.send(business);
+    }else if(loc){
+        let business = await BusinessModel.find({location:{$regex:loc,$options:"i"}})
+        res.send(business);
+    }else if(sort){
+        let business = await BusinessModel.find().sort({price:sort});
+        res.send(business);
+    }else{
+        res.send("invalid request");
     }
 })
 
@@ -91,9 +101,8 @@ businessrouter.patch("/removeall",async (req,res)=>{
         let ID = req.params.id;
         let user = await UserModel.find({_id:userID});
         user[0].services = [];
-        console.log(user[0]);
         await UserModel.findByIdAndUpdate({_id:userID},user[0]);
-        res.send({"msg":"Service has been Cleared"});
+        res.send({"msg":"Service has been Cleared",email:user[0].email});
     }catch(error){
         res.send({"msg":error.message});
     }

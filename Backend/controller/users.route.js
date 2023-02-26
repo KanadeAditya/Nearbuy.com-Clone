@@ -4,7 +4,10 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const {UserModel} = require("../model/users.model.js");
 
+const cors = require("cors") 
+
 const userrouter = express.Router();
+userrouter.use(cors())
 userrouter.use(express.json());
 
 userrouter.get("/",async (req,res)=>{
